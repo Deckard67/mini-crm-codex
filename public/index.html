@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini CRM</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <h1>Mini CRM</h1>
+        <form id="lead-form" class="lead-form">
+          <label for="name">Nombre</label>
+          <input id="name" name="name" type="text" placeholder="Ana Perez" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="ana@empresa.com" required />
+
+          <label for="source">Fuente</label>
+          <input id="source" name="source" type="text" placeholder="Web, referido, evento..." />
+
+          <label for="status">Estado</label>
+          <select id="status" name="status">
+            <option value="nuevo" selected>Nuevo</option>
+            <option value="contactado">Contactado</option>
+            <option value="perdido">Perdido</option>
+          </select>
+
+          <div class="form-actions">
+            <button id="submit-button" type="submit">Guardar lead</button>
+            <button id="cancel-edit-button" class="secondary-button" type="button" hidden>Cancelar edicion</button>
+          </div>
+        </form>
+
+        <p id="message" class="message" aria-live="polite"></p>
+      </section>
+
+      <section class="card">
+        <h2>Leads</h2>
+        <div class="leads-toolbar">
+          <label class="filter-field" for="lead-search">
+            Buscar
+            <input id="lead-search" type="search" placeholder="Nombre o email" />
+          </label>
+
+          <label class="filter-field" for="status-filter">
+            Estado
+            <select id="status-filter">
+              <option value="todos" selected>Todos</option>
+              <option value="nuevo">Nuevo</option>
+              <option value="contactado">Contactado</option>
+              <option value="perdido">Perdido</option>
+            </select>
+          </label>
+
+          <p id="visible-count" class="visible-count" aria-live="polite">0 leads visibles</p>
+          <a class="export-button" href="/leads/export.csv" download="leads.csv">Exportar CSV</a>
+        </div>
+        <table class="leads-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Fuente</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="leads-body">
+            <tr>
+              <td colspan="6">Cargando leads...</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

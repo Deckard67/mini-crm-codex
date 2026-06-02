@@ -1,0 +1,22 @@
+{
+  "name": "mini-crm-api",
+  "version": "1.0.0",
+  "description": "API basica para un mini CRM de leads con Node.js y Express",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "crm",
+    "leads",
+    "express",
+    "node"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^12.10.0",
+    "express": "^4.21.2"
+  }
+}

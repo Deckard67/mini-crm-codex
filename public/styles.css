@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #1f2937;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  display: grid;
+  gap: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #dbe3ee;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+.leads-toolbar {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(160px, 220px) auto auto;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 16px;
+}
+
+.filter-field {
+  display: grid;
+  gap: 6px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.filter-field input,
+.filter-field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #1f2937;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.visible-count {
+  margin: 0;
+  padding-bottom: 10px;
+  color: #64748b;
+  font-size: 14px;
+  text-align: right;
+}
+
+.export-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 10px 14px;
+  border: 1px solid #0f766e;
+  border-radius: 8px;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.export-button:hover {
+  background: #115e59;
+}
+
+.lead-form {
+  display: grid;
+  gap: 12px;
+}
+
+.lead-form input,
+.lead-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.lead-form button {
+  width: fit-content;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lead-form button:hover {
+  background: #115e59;
+}
+
+.lead-form .secondary-button {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #1f2937;
+}
+
+.lead-form .secondary-button:hover {
+  background: #f8fafc;
+}
+
+.message {
+  min-height: 24px;
+  margin-bottom: 0;
+  color: #0f766e;
+}
+
+.leads-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leads-table th,
+.leads-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.leads-table thead {
+  background: #f8fafc;
+}
+
+.editing-row {
+  background: #f0fdfa;
+}
+
+.table-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.row-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.table-btn {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 13px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.table-btn:hover {
+  background: #f8fafc;
+}
+
+.table-btn-primary {
+  border-color: #0f766e;
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.table-btn-primary:hover {
+  background: #115e59;
+}
+
+.table-btn-danger {
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+.table-btn-danger:hover {
+  background: #fef2f2;
+}
+
+.status-tag {
+  --status-bg: #f1f5f9;
+  --status-border: #e2e8f0;
+  --status-text: #334155;
+  --status-dot: #64748b;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 96px;
+  padding: 5px 10px;
+  border: 1px solid var(--status-border);
+  border-radius: 999px;
+  background: var(--status-bg);
+  color: var(--status-text);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.status-tag::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--status-dot);
+}
+
+.status-nuevo {
+  --status-bg: #eff6ff;
+  --status-border: #bfdbfe;
+  --status-text: #1e3a8a;
+  --status-dot: #2563eb;
+}
+
+.status-contactado {
+  --status-bg: #ecfdf5;
+  --status-border: #a7f3d0;
+  --status-text: #065f46;
+  --status-dot: #10b981;
+}
+
+.status-perdido {
+  --status-bg: #fef2f2;
+  --status-border: #fecaca;
+  --status-text: #991b1b;
+  --status-dot: #ef4444;
+}
+
+@media (max-width: 720px) {
+  .leads-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .visible-count {
+    padding-bottom: 0;
+    text-align: left;
+  }
+}
