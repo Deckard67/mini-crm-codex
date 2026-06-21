@@ -30,6 +30,13 @@ h2 {
   margin-top: 0;
 }
 
+.deployment-note {
+  margin: 0 0 8px;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .leads-toolbar {
   display: grid;
   grid-template-columns: minmax(220px, 1fr) minmax(160px, 220px) auto auto;
