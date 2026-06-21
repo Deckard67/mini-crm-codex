@@ -6,6 +6,10 @@ const cancelEditButton = document.getElementById("cancel-edit-button");
 const leadSearch = document.getElementById("lead-search");
 const statusFilter = document.getElementById("status-filter");
 const visibleCount = document.getElementById("visible-count");
+const statTotal = document.getElementById("stat-total");
+const statNew = document.getElementById("stat-new");
+const statContacted = document.getElementById("stat-contacted");
+const statLost = document.getElementById("stat-lost");
 let currentLeads = [];
 let editingLeadId = null;
 
@@ -70,7 +74,43 @@ function getFilteredLeads() {
 
 function renderFilteredLeads() {
   const filteredLeads = getFilteredLeads();
+  renderLeadStats();
   renderLeads(filteredLeads);
+}
+
+function renderLeadStats() {
+  const stats = currentLeads.reduce(
+    (totals, lead) => {
+      const status = normalizeStatus(lead.status);
+
+      totals.total += 1;
+
+      if (status === "nuevo") {
+        totals.new += 1;
+      }
+
+      if (status === "contactado") {
+        totals.contacted += 1;
+      }
+
+      if (status === "perdido") {
+        totals.lost += 1;
+      }
+
+      return totals;
+    },
+    {
+      total: 0,
+      new: 0,
+      contacted: 0,
+      lost: 0
+    }
+  );
+
+  statTotal.textContent = stats.total;
+  statNew.textContent = stats.new;
+  statContacted.textContent = stats.contacted;
+  statLost.textContent = stats.lost;
 }
 
 function renderLeads(leads) {
